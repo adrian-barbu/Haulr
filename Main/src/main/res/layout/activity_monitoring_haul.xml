@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map Viewer -->
+
+    <fragment
+        android:id="@+id/mapViewer"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader" />
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo" />
+
+        <ProgressBar
+            android:id="@+id/pgUpdate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader"
+        android:background="@color/pay_haul_hidden_area"
+        android:padding="20dp">
+
+        <!-- Status Monitoring Layout -->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layoutButtons"
+            android:layout_centerInParent="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|top"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layoutPhoneCall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:gravity="center"
+                    android:onClick="onItemClick"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_phone_call" />
+
+                    <TextView
+                        style="@style/monitoring_haul_status_item"
+                        android:text="Call your driver"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <!-- Finding -->
+
+                <com.haulr.control.font.HaulrTextView
+                    style="@style/monitoring_haul_status_item"
+                    android:text="@string/finding_drivers" />
+
+                <!-- Driver Selected -->
+
+                <com.haulr.control.font.HaulrTextView
+                    android:id="@+id/tvOpLeaveToPickup"
+                    style="@style/monitoring_haul_status_item"
+                    android:text="@string/status_leave_to_pickup"
+                    android:visibility="gone" />
+
+                <!-- Arrived at Pickup -->
+
+                <com.haulr.control.font.HaulrTextView
+                    android:id="@+id/tvOpArriveAtPickup"
+                    style="@style/monitoring_haul_status_item"
+                    android:text="@string/status_arrive_at_pickup"
+                    android:visibility="gone" />
+
+                <!-- Leave to DropOff -->
+
+                <com.haulr.control.font.HaulrTextView
+                    android:id="@+id/tvOpLeaveToDropoff"
+                    style="@style/monitoring_haul_status_item"
+                    android:text="@string/status_leave_to_dropoff"
+                    android:visibility="gone" />
+
+                <!-- Arrived at DropOff -->
+
+                <com.haulr.control.font.HaulrTextView
+                    android:id="@+id/tvOpArriveAtDropoff"
+                    style="@style/monitoring_haul_status_item"
+                    android:text="@string/status_arrive_at_dropoff"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/layoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp">
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvCancel"
+                style="@style/monitoring_haul_op_button"
+                android:onClick="onItemClick"
+                android:text="@string/cancel_search" />
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvComplete"
+                style="@style/monitoring_haul_op_button"
+                android:onClick="onItemClick"
+                android:text="@string/complete_haul"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

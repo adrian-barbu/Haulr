@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Driver Main Activity -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map Viewer -->
+
+    <fragment
+        android:id="@+id/mapViewer"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader"/>
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Settings -->
+
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:src="@drawable/setting_button_selector" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo" />
+
+        <!-- Driver Mark -->
+
+        <com.haulr.control.font.HaulrTextView
+            style="@style/label_button"
+            android:layout_alignRight="@+id/ivLogo"
+            android:layout_alignTop="@+id/ivLogo"
+            android:layout_marginRight="15dip"
+            android:text="@string/driver" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ProgressBar
+                android:id="@+id/pgPending"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <!-- Pending Haulr -->
+
+            <ImageView
+                android:id="@+id/ivPending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onItemClick"
+                android:src="@drawable/ic_pending_haul"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Change Status & Scan Job -->
+
+    <RelativeLayout
+        android:id="@+id/layoutCommand"
+        android:onClick="onItemClick"
+        android:clickable="true"
+        style="@style/info_item_layout"
+        android:layout_above="@+id/tvStatus">
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvDynamicText"
+            style="@style/d_common_yellow_label"
+            android:text="@string/d_go_online" />
+
+    </RelativeLayout>
+
+    <!-- Offline / OnLine Status -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvStatus"
+        style="@style/common_action_button"
+        android:layout_alignParentBottom="true"
+        android:onClick="onItemClick"
+        android:text="@string/d_status_offline" />
+
+</RelativeLayout>

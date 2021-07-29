@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_fragment_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+
+    <RelativeLayout style="@style/header_layout">
+
+        <LinearLayout
+            android:id="@+id/layoutBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:onClick="onItemClick"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <!-- Back -->
+
+            <ImageView style="@style/image_back_button" />
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvBack"
+                style="@style/label_button"
+                android:onClick="onItemClick"
+                android:text="@string/setting_payment" />
+
+        </LinearLayout>
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvTitle"
+            style="@style/setting_header_text"
+            android:layout_centerInParent="true"
+            android:text="@string/setting_payment_add_card" />
+
+        <!-- Save -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvSave"
+            style="@style/label_button"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:text="@string/setting_payment_save" />
+
+    </RelativeLayout>
+
+    <!-- Items -->
+
+    <LinearLayout
+        android:id="@+id/layoutCard"
+        style="@style/setting_part_layout"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <com.haulr.control.creditcard.CreditCardEditText
+            android:id="@+id/etCreditCardNumber"
+            style="@style/credit_card_item"
+            android:hint="@string/payment_card_hint"
+            android:inputType="textNoSuggestions"
+            android:maxLength="19"
+            android:textCursorDrawable="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutExpireAndCVC"
+        style="@style/setting_part_layout"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etCreditCardExpiry"
+            style="@style/credit_card_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_calendar"
+            android:hint="@string/payment_expiration_hint"
+            android:imeOptions="actionNext"
+            android:includeFontPadding="false"
+            android:inputType="datetime"
+            android:maxLength="5" />
+
+        <EditText
+            android:id="@+id/etCreditCardCVC"
+            style="@style/credit_card_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_lock"
+            android:hint="@string/payment_credit_card_cvc_hint"
+            android:imeOptions="actionDone"
+            android:includeFontPadding="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.haulr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg"
+    android:padding="30dp">
+
+    <!-- Normal Login Button -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvNormalLogin"
+        style="@style/label_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/customer_login" />
+
+    <!-- Logo -->
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo" />
+
+    <!-- Driver Mark -->
+
+    <com.haulr.control.font.HaulrTextView
+        style="@style/label_button"
+        android:layout_alignRight="@+id/ivLogo"
+        android:layout_alignTop="@+id/ivLogo"
+        android:layout_marginRight="20dp"
+        android:text="@string/driver" />
+
+    <!-- Sub Label -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvVision"
+        style="@style/label_vision"
+        android:layout_below="@+id/ivLogo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/common_login_vision" />
+
+    <!-- Login Button -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvLogin"
+        style="@style/label_button"
+        android:layout_below="@+id/tvVision"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/login_with_phone_number" />
+
+</RelativeLayout>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haulr">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- My Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!--
+      IMPORTANT: Change "info.androidhive.parsenotifications.permission.C2D_MESSAGE" in the lines below
+      to match your app's package name + ".permission.C2D_MESSAGE".
+    -->
+    <permission
+        android:name="com.haulr.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.haulr.permission.C2D_MESSAGE" />
+
+    <!-- Maps API needs OpenGL ES 2.0. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="com.haulr.UILApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCVLZtXoYsAh6XdPofSphIApbDmHb0D9-U" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.parse.ui.ParseLoginActivity.PARSE_LOGIN_ENABLED"
+                android:value="true" />
+
+            <meta-data
+                android:name="com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_ENABLED"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:name=".ui.login.LoginDriverActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait">
+
+            <meta-data
+                android:name="com.parse.ui.ParseLoginActivity.PARSE_LOGIN_ENABLED"
+                android:value="true" />
+
+        </activity>
+
+        <activity
+            android:name=".ui.login.LoginInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait">
+
+            <meta-data
+                android:name="com.parse.ui.ParseLoginActivity.PARSE_LOGIN_ENABLED"
+                android:value="true" />
+
+        </activity>
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait">
+
+        </activity>
+
+        <activity
+            android:name=".ui.customer.PlaceSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".ui.customer.RequestHaulActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.Transparent" />
+
+        <activity
+            android:name=".ui.customer.PayHaulActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.Transparent" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+
+        </activity>
+
+        <activity
+            android:name=".ui.customer.MonitoringHaulActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.Transparent" >
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+
+        </activity>
+
+        <activity
+            android:name=".ui.common.CompleteHaulActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.setting.ProfileActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.setting.PaymentActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"></activity>
+
+        <activity
+            android:name="com.haulr.ui.setting.AddCardActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"></activity>
+
+        <activity
+            android:name="com.haulr.ui.setting.DriverModeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.setting.AboutActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.setting.AboutLinkActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <!-- Driver Relation Activity -->
+
+        <!-- Driver Status -->
+        <activity
+            android:name="com.haulr.ui.driver.dChangeStatusActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" >
+
+        </activity>
+
+        <activity
+            android:name="com.haulr.ui.driver.dViewHaulActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.driver.dMoveToPickupActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.driver.dArrivePickupActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name="com.haulr.ui.driver.dMoveToDropoffActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".ui.common.PendingHaulActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".ui.driver.dTicketActivity"
+            android:screenOrientation="sensorPortrait" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+
+        </activity>
+
+        <!-- Relation Activity -->
+
+        <activity
+            android:name="io.card.payment.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name="io.card.payment.DataEntryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="@string/parse_app_id" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="@string/parse_client_key" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.WebDialogTheme"
+            android:resource="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1596050577322933"
+            android:exported="true" />
+
+        <!-- Push Notification -->
+        <service android:name="com.parse.PushService" />
+
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!-- IMPORTANT: Change "info.androidhive.parsenotifications" to match your app's package name. -->
+                <category android:name="com.haulr" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.haulr.parse.notification.NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

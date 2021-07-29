@@ -1,0 +1,41 @@
+<!-- Input Code Fragment -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Code Input Box -->
+
+    <EditText
+        android:id="@+id/etVerifyCode"
+        style="@style/login_input_box"
+        android:hint="@string/hint_verify_code" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Info -->
+
+        <com.haulr.control.font.HaulrTextView
+            style="@style/login_info_label"
+            android:text="@string/label_info_code" />
+
+        <!-- Resend -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvResend"
+            style="@style/login_resend_label"
+            android:text="@string/text_resend" />
+    </LinearLayout>
+
+    <!-- For driver login -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvDriverLoginHint"
+        style="@style/login_info_label"
+        android:text="@string/label_info_phone_number_for_driver"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Haulr</string>
+    <!--<string name="parse_app_id">b5OrfgV7leOq9kXK6jFdCrzGTp8W11n4C63vDttA</string>-->
+    <!--<string name="parse_client_key">Aor2BlJBfcyjOltB5StFSwpsR89Sk435BgH5JVRb</string>-->
+    <string name="parse_app_id">evbzRCI1rz10Y9OMQSbYMs6pIyvGDZ8DFPM1UmSW</string>
+    <string name="parse_client_key">bimieJt1xY2E8tzFEY4Oq1eUPPLEyCPl9Ef5XdEA</string>
+    <string name="facebook_app_id">1665469210331965</string>
+
+    <!-- Haul -->
+
+    <!-- Login -->
+    <string name="customer_login">Customer log in</string>
+    <string name="driver_login">Driver log in</string>
+    <string name="common_login_vision">On-demand moving</string>
+    <string name="login_with_phone_number">Log in with phone number</string>
+    <string name="login_with_facebook">Log in with Facebook</string>
+    <string name="driver">Driver</string>
+
+    <!-- Login Fragment -->
+    <string name="hint_phone_number">Enter phone number</string>
+    <string name="label_info_phone_number_for_customer">Get a text when your movers arrive.</string>
+    <string name="label_info_phone_number_for_driver">Want to become a driver? <u>Contact us</u> to become one.</string>
+    <string name="error_login_as_driver">Unable to log in, please contact us for support.</string>
+
+    <string name="hint_verify_code">Verify Code</string>
+    <string name="text_resend">Resend</string>
+    <string name="label_info_code">Enter the code we just texted.</string>
+
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+
+    <string name="page_phone_number_title">Phone Number</string>
+    <string name="page_verify_number_title">Verify Phone Number</string>
+
+    <string name="message_send_code">Your haulr code is %s</string>
+
+    <!-- Main Activity -->
+    <string name="set_pickup">Set as pickup</string>
+    <string name="set_pickup_location">Set Pickup Location</string>
+
+    <string name="my_position">My Position</string>
+
+    <!-- Place Search Activity -->
+    <string name="cancel_search">Cancel</string>
+    <string name="search_hint">Search or enter address</string>
+    <string name="current_location">Current Location</string>
+
+    <!-- Setting Activity -->
+
+    <string name="setting_done">Done</string>
+    <string name="setting_account">Account</string>
+
+    <string name="setting_profile">Profile</string>
+    <string name="setting_payment">Payment</string>
+    <string name="setting_mover_mode">Become a Driver</string>
+    <string name="setting_about">About</string>
+
+    <string name="setting_profile_update">Update</string>
+    <string name="setting_profile_first_name">First Name</string>
+    <string name="setting_profile_last_name">Last Name</string>
+    <string name="setting_profile_email">example@gmail.com</string>
+    <string name="setting_profile_phone_number">Phone Number</string>
+
+    <string name="logout">Log Out</string>
+
+    <string name="setting_payment_add_card">Add Card</string>
+    <string name="setting_payment_save">Save</string>
+    <string name="setting_payment_card_delete_title">Are you sure you want to delete card information?</string>
+
+    <string name="payment_card_hint">Card Number</string>
+    <string name="payment_expiration_hint">MM/YY</string>
+    <string name="payment_credit_card_cvc_hint">CVC</string>
+
+    <string name="setting_mover">Mover</string>
+    <string name="setting_driver">Driver</string>
+    <string name="setting_driver_label">Please contact us directly to become a driver</string>
+    <string name="setting_driver_request">Hello,\r\nI want to become a driver.</string>
+
+    <string name="setting_about_faq">FAQ</string>
+    <string name="setting_about_terms">Terms Of Service</string>
+
+    <!-- Haul Info -->
+    <string name="haul_info_cancel">Cancel</string>
+    <string name="haul_info_no_price">$0.00</string>
+
+    <string name="request_haul">Request haul</string>
+
+    <string name="pickup_location">Pickup Location</string>
+    <string name="dropoff_location">Dropoff Location</string>
+    <string name="set_dropoff_location">Set Dropoff Location</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="credit_card_payment_method">Credit Card Pay</string>
+
+    <string name="haul_info_add_photo">What are you moving?</string>
+
+    <string name="error_no_select_pickup_location">Please select pickup location.</string>
+    <string name="error_no_select_dropoff_location">Please select dropoff location.</string>
+    <string name="error_no_price">There is something wrong for calculate price.</string>
+    <string name="error_no_image">Please add an image of what you are moving.</string>
+
+    <!-- Pay Haul -->
+    <string name="pay_haul_title">Pay</string>
+    <string name="pay_haul_card">CARD</string>
+    <string name="pay_haul_credit_card">CREDIT CARD</string>
+    <string name="pay_haul_credit_card_hint">Select credit card</string>
+    <string name="pay_haul_pay">PAY</string>
+    <string name="pay_haul_make_payment">Make Payment</string>
+
+    <string name="warning_select_credit_card">Please choose a credit card.</string>
+    <string name="error_pay_with_credit_card">Unnable to pay with this card. Please check your credit card and retry.</string>
+    <string name="error_create_transaction">Unnable to create new payment. Please check your network status and retry.</string>
+
+    <!-- Complete Haul -->
+    <string name="haulr_summary">Haulr Summary:</string>
+    <string name="distance_time">Distance and Time:</string>
+    <string name="rate_experience">Rate Experience</string>
+    <string name="complete_haul">Complete</string>
+
+    <!-- Monitoring Haul -->
+    <string name="finding_drivers">Hang tight, we are finding a driver for you.</string>
+
+    <!-- Photo Picker -->
+    <string name="photo_picker">What are you moving?</string>
+    <string name="take_from_camera">Take From Camera</string>
+    <string name="take_from_gallery">Take From Gallery</string>
+
+    <!-- Alert Dialog -->
+    <string name="warning_exit_app">Are you sure to close the app now?</string>
+    <string name="warning_logout">Are you sure to logout?</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+
+    <string name="dialog_confirm">Confirm</string>
+    <string name="dialog_reject">Reject</string>
+
+    <string name="dialog_continue">Yes, I will</string>
+    <string name="dialog_no_continue">No, I will find new</string>
+
+    <!-- Success, Warning, Error Message -->
+    <string name="error_network_connectivity">You are not connected to the Internet. Please check your connectivity.</string>
+
+    <string name="error_gps_provide">Can\'t get your current location. Please turn on GPS function and then retry.</string>
+
+    <string name="error_input_phone_number">Please input phone number.</string>
+    <string name="error_login">Log in failed. Please retry. Sorry for inconvenience.</string>
+    <string name="error_invalid_code">Haulr code is not valid. Please check your message box again.</string>
+    <string name="error_invalid_email">Email validation failed. Please check again.</string>
+
+    <string name="success_update_user_info">Your information has been updated.</string>
+    <string name="failed_update_user_info">Update failed. Please retry again.</string>
+
+    <string name="error_change_mode">Update failed. Please retry again.</string>
+
+    <string name="error_input_credit_card_number">Please input credit number.</string>
+    <string name="error_input_credit_card_expire_date">Please input expire date.</string>
+
+    <string name="error_validation_credit_card_expire_date">Incorrect expire date. Please check again.</string>
+
+    <string name="success_create_credit_card">New credit card was added successfully.</string>
+    <string name="failed_create_credit_card">Uploading failed. Please retry again.</string>
+
+    <string name="success_update_credit_card">Credit card was updated.</string>
+    <string name="failed_update_credit_card">Update failed. Please retry again.</string>
+
+    <string name="success_create_service">Your haul was uploaded. Please wait a moment.</string>
+    <string name="failed_create_service">Request failed. Please retry. Sorry for inconvenience.</string>
+
+    <string name="failed_calculation_estimation">Calculation failed. Please retry. Sorry for inconvenience.</string>
+
+    <!-- Driver -->
+
+    <!-- Main Activity -->
+    <string name="d_status_offline">You\'re Offline!</string>
+    <string name="d_status_online">You\'re Online!</string>
+
+    <string name="d_go_online">Go online for jobs...</string>
+    <string name="d_scan_job">Scan for jobs...</string>
+
+    <string name="d_no_haul">No jobs available, check back real soon.</string>
+
+    <string name="warning_already_exist_uncompleted_haul">There is uncompleted your haul. Will you to continue to do this?</string>
+    <string name="warning_not_acceptable_haul">You can\'t accept new haul until you complete pending one.</string>
+    <string name="warning_not_request_haul">You can\'t request new haul until you complete pending one.</string>
+
+    <!-- Driver Status -->
+    <string name="d_change_status_title">Driver Status</string>
+    <string name="d_online">Online</string>
+    <string name="d_offline">Offline</string>
+    <string name="d_online_label">receive request for delivery</string>
+    <string name="d_offline_label">no request for delivery</string>
+
+    <!-- View Haul On Driver-Side -->
+    <string name="d_view_haul_title">This haul pays</string>
+    <string name="d_estimation">Estimated Distance &amp; Time of Arrival</string>
+    <string name="d_estimation_1">We\'ve estimated the route to be</string>
+
+    <string name="d_accept_haul">Accept the haul</string>
+    <string name="confirm_accept_haul">Are you sure you want to accept this haul?</string>
+
+    <string name="error_accept_haul">Accept failed. Please retry. Sorry for inconvenience.</string>
+
+    <string name="error_already_accepted_by_another">This haul is already started by another driver. Please find another.</string>
+
+    <!-- Move To Pickup -->
+    <string name="d_cancel_haul">Cancel haul</string>
+    <string name="warning_cancel_haul">Cancel your haul? This reflects your rating.</string>
+
+    <string name="success_cancel_haul">You haul request has been cancelled.</string>
+    <string name="error_cancel_haul">Cancel operation failed. Please check your network and retry. Sorry for inconvenience.</string>
+
+    <string name="d_navigation_to_pickup">Navigation to pick-up</string>
+    <string name="d_arrived_at_pickup">Arrived at Pick-up</string>
+
+    <string name="error_update_your_haul">Update operation of your status failed. Please retry. Sorry for inconvenience.</string>
+
+    <!-- Arrived at Pickup -->
+    <string name="start_haulr_meter">Start haulr meter</string>
+
+    <!-- Move To DropOff -->
+
+    <string name="d_navigation_to_dropoff">Navigation to dropoff</string>
+    <string name="d_arrived_at_dropoff">Arrived at Dropoff</string>
+
+    <!-- Complete Haulr -->
+
+    <string name="warning_complete_haulr">Are you sure you want to complete this haul?</string>
+
+    <!-- Twilio Message -->
+    <string name="d_accept_request">Hello, A driver has accepted your haul request and is on route to your pickup location. - Haulr Team</string>
+    <string name="d_arrive_pickup_message">Hello, your Haulr driver has arrived at the pick-up location. - Haulr Team</string>
+    <string name="d_leave_to_dropoff_message">Hello, your Haulr driver is on route to your drop-off location. - Haulr Team</string>
+    <string name="d_arrive_dropoff_message">Hello, your Haulr driver has arrived at the drop-off location. - Haulr Team</string>
+    <string name="d_complete_message">Hello, your haul request is now complete. Thank you for using Haulr. - Haulr Team</string>
+
+    <string name="success_send_message">A text message has been sent to the customer.</string>
+    <string name="failed_send_message">The message wasn\'t sent. Please retry. Sorry for inconvenience.</string>
+
+    <!-- Pending Haul -->
+
+    <string name="pending_haul_customer_title">Pending Request</string>
+    <string name="pending_haul_driver_title">Pending Haul</string>
+
+    <string name="loading_information">Loading informations ...</string>
+
+    <string name="pending_haul_pickup_location">Pickup Location: </string>
+    <string name="pending_haul_dropoff_location">Dropoff Location: </string>
+    <string name="pending_haul_payment_method">Payment Method: Visa</string>
+    <string name="pending_haul_price_of_haul">Price of Haul: $</string>
+    <string name="pending_haul_status">Service Status: </string>
+
+    <string name="pending_haul_cancel">Cancel this haul</string>
+    <string name="pending_haul_complete">Complete this haul</string>
+    <string name="pending_haul_continue">Continue this haul</string>
+
+    <string name="warning_customer_cancel_haul">Do you want to cancel this haul?</string>
+    <string name="error_no_cancel_haul">Can\'t cancel this haul because the service is already started.</string>
+
+    <!-- Status Full String -->
+    <string name="status_pending">Your driver isn\'t selected yet.</string>
+    <string name="status_leave_to_pickup">A driver has accepted your haul request and is on route to your pick-up location.</string>
+    <string name="status_arrive_at_pickup">The driver has arrived at the pick-up location.</string>
+    <string name="status_leave_to_dropoff">The driver is on route to your drop-off location. You are unable to cancel the request at this point.</string>
+    <string name="status_arrive_at_dropoff">Your driver has arrived at your drop-off location. You may rate the customer and complete this haul.</string>
+
+    <string name="failed_get_driver_phone_number">There isn\'t driver\'s phone number.</string>
+    <string name="failed_get_customer_phone_number">There isn\'t customer\'s phone number.</string>
+    <!--
+        Push Notification
+    -->
+
+    <!-- Subscribe Channel -->
+    <string name="subscribe_channel_failed">You may not receive notification from server. \r\nPlease contact to service team.</string>
+
+    <!-- Service Request -->
+    <string name="service_requested">Your service request is sent. Please wait a moment until service is accepted. Thanks.</string>
+    <string name="service_request_failed">Your service request is failed. Sorry for inconvenience. Try to again.</string>
+    <string name="service_request_received">New service request is arrived.</string>
+
+    <!-- Service Response -->
+    <string name="service_accepted">Hello, A driver has accepted your haul request and is on route to your pick-up location. - Haulr Team</string>
+    <string name="service_accept_failed">Something like error has happened. Sorry for inconvenience. Try to again.</string>
+</resources>

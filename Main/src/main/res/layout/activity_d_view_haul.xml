@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_transparent_bg">
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Back Button -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick" />
+
+        <!-- Price -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvPrice"
+            style="@style/haul_info_header_price"
+            android:layout_centerInParent="true"
+            android:text="@string/d_view_haul_title" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutHeaderSeparator"
+        style="@style/haul_info_separator"
+        android:layout_below="@+id/layoutHeader" />
+
+    <!-- Add Image Part -->
+
+    <RelativeLayout
+        android:id="@+id/layoutPickPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutSeparator2"
+        android:layout_below="@+id/layoutHeaderSeparator"
+        android:onClick="onItemClick">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/haul_info_item_icon"
+                android:src="@drawable/ic_camera" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
+
+
+    <!-- Separator -->
+
+    <LinearLayout
+        android:id="@+id/layoutSeparator2"
+        style="@style/haul_info_separator"
+        android:layout_above="@+id/layoutPickInfo" />
+
+    <!-- Haul Info -->
+
+    <LinearLayout
+        android:id="@+id/layoutPickInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvAcceptHaul"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!-- Pickup Location -->
+
+        <LinearLayout
+            android:id="@+id/layoutPickupLocation"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_map_marker" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <LinearLayout
+                    style="@style/haul_info_sub_layout"
+                    android:layout_toLeftOf="@+id/ivRight1">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/info_small"
+                        android:text="@string/pickup_location" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvPickUpLocation"
+                        style="@style/info_large"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/set_pickup_location" />
+
+                </LinearLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/haul_info_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Dropoff Location -->
+
+        <LinearLayout
+            android:id="@+id/layoutDropoffLocation"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_map_marker" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <LinearLayout
+                    style="@style/haul_info_sub_layout"
+                    android:layout_toLeftOf="@+id/ivRight2">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/info_small"
+                        android:text="@string/dropoff_location" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvDropOffLocation"
+                        style="@style/info_large"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/set_dropoff_location" />
+
+                </LinearLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/haul_info_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Distance & Time of Arrival -->
+
+        <LinearLayout
+            android:id="@+id/layoutEstimation"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_calculator" />
+
+            </LinearLayout>
+
+            <RelativeLayout style="@style/two_column_right_panels">
+
+                <LinearLayout style="@style/haul_info_sub_layout">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/view_haul_info_small"
+                        android:text="@string/d_estimation" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvEstimation"
+                        style="@style/info_large"
+                        android:layout_marginTop="3dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/setting_part_item_right_image"
+                    android:src="@drawable/ic_right" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Hiddened Map Based Layout -->
+
+    <RelativeLayout
+        android:id="@+id/layoutMapBased"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvAcceptHaul"
+        android:layout_below="@+id/layoutHeader"
+        android:visibility="invisible">
+
+        <!-- Map Viewer -->
+
+        <fragment
+            android:id="@+id/mapViewer"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layoutEstimation1" />
+
+        <!-- Distance & Time of Arrival -->
+
+        <LinearLayout
+            android:id="@+id/layoutEstimation1"
+            style="@style/haul_info_item_layout"
+            android:layout_alignParentBottom="true"
+            android:onClick="onItemClick">
+
+            <LinearLayout
+                style="@style/two_column_left_panels"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivLeftIcon"
+                    style="@style/setting_part_item_right_image"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/ic_left" />
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_picker" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <LinearLayout style="@style/haul_info_sub_layout">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/view_haul_info_small"
+                        android:text="@string/d_estimation_1" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvEstimation1"
+                        style="@style/info_large"
+                        android:layout_marginTop="3dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <!-- Accept Haul -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvAcceptHaul"
+        style="@style/common_action_button"
+        android:layout_alignParentBottom="true"
+        android:onClick="onItemClick"
+        android:text="@string/d_accept_haul" />
+</RelativeLayout>

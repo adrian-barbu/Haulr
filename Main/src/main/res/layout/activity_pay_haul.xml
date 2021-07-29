@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutHiddenPart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutPay"
+        android:background="@color/pay_haul_hidden_area"
+        android:onClick="onItemClick"
+        android:orientation="vertical" />
+
+    <!-- Request Haul Hidden Layout -->
+
+    <LinearLayout
+        android:id="@+id/layoutPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <!-- Header -->
+
+        <RelativeLayout
+            style="@style/header_layout"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/ivCreditCardIcon"
+                style="@style/pay_haul_header_icon"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_credit_card" />
+
+            <!-- Label -->
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/pay_haul_header"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ivCreditCardIcon"
+                android:text="@string/pay_haul_title" />
+
+            <!-- Cancel -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvPaymentCancel"
+                style="@style/pay_haul_cancel_button"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:onClick="onItemClick"
+                android:text="@string/haul_info_cancel" />
+
+        </RelativeLayout>
+
+        <!-- Separator -->
+
+        <LinearLayout
+            android:id="@+id/layoutHeaderSeparator1"
+            style="@style/pay_haul_separator"
+            android:layout_below="@+id/layoutHeader" />
+
+        <!-- Payment Info -->
+
+        <LinearLayout
+            android:id="@+id/layoutPaymentInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutHeaderSeparator1"
+            android:orientation="vertical">
+
+            <!-- Card Selection -->
+
+            <LinearLayout
+                android:id="@+id/layoutCardSelection"
+                style="@style/setting_common_item"
+                android:onClick="onItemClick">
+
+                <LinearLayout
+                    style="@style/two_column_left_panels"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="top|left">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/pay_haul_small_item"
+                        android:text="@string/pay_haul_card" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/two_column_right_panels">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            style="@style/haul_info_sub_layout"
+                            android:layout_toLeftOf="@+id/ivRight1">
+
+                            <com.haulr.control.font.HaulrTextView
+                                style="@style/pay_haul_normal_item"
+                                android:text="@string/pay_haul_credit_card" />
+
+                            <com.haulr.control.font.HaulrTextView
+                                android:id="@+id/tvCreditCardInfo"
+                                style="@style/pay_haul_normal_item"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/pay_haul_credit_card_hint" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivRight1"
+                            style="@style/setting_part_item_right_image"
+                            android:src="@drawable/ic_right_dark" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Separator -->
+            <LinearLayout style="@style/pay_haul_separator" />
+
+            <!-- Pay Amount -->
+
+            <LinearLayout
+                android:id="@+id/layoutPayAmount"
+                style="@style/haul_info_item_layout"
+                android:onClick="onItemClick">
+
+                <LinearLayout
+                    style="@style/two_column_left_panels"
+                    android:layout_marginLeft="10dp">
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/two_column_right_panels">
+
+                    <RelativeLayout style="@style/haul_info_sub_layout">
+
+                        <com.haulr.control.font.HaulrTextView
+                            style="@style/pay_haul_normal_item"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pay_haul_pay" />
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvPrice"
+                            style="@style/pay_haul_price"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Separator -->
+            <LinearLayout style="@style/pay_haul_separator" />
+
+        </LinearLayout>
+
+        <!-- Pay Part -->
+
+        <RelativeLayout
+            android:id="@+id/layoutPayPart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/layoutPayStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:onClick="onItemClick">
+
+                <ImageView
+                    android:layout_width="@dimen/large_icon_size"
+                    android:layout_height="@dimen/large_icon_size"
+                    android:src="@drawable/ic_pay_request" />
+
+                <com.haulr.control.font.HaulrTextView
+                    style="@style/pay_haul_action"
+                    android:text="@string/pay_haul_make_payment" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPayDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                android:onClick="onItemClick">
+
+                <ImageView
+                    android:layout_width="@dimen/large_icon_size"
+                    android:layout_height="@dimen/large_icon_size"
+                    android:src="@drawable/ic_pay_done" />
+
+                <com.haulr.control.font.HaulrTextView
+                    style="@style/pay_haul_action"
+                    android:text="Done" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Payment Button -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvPayment"
+            style="@style/common_action_button"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layoutPaymentInfo"
+            android:background="@android:color/darker_gray"
+            android:enabled="false"
+            android:onClick="onItemClick"
+            android:text="@string/pay_haul_make_payment"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+
+    <LinearLayout
+        android:id="@+id/layoutProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/layoutPay"
+        android:background="@color/pay_haul_hidden_area"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="@android:style/Widget.Holo.Light.ProgressBar.Large.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

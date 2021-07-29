@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map Viewer -->
+
+    <fragment
+        android:id="@+id/mapViewer"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader" />
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Settings -->
+
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:src="@drawable/setting_button_selector" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ProgressBar
+                android:id="@+id/pgPending"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <!-- Pending Haulr -->
+
+            <ImageView
+                android:id="@+id/ivPending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onItemClick"
+                android:src="@drawable/ic_pending_haul"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Pickup Location -->
+
+    <RelativeLayout
+        android:id="@+id/layoutPickupLocation"
+        style="@style/info_item_layout"
+        android:layout_above="@+id/tvSetPickup"
+        android:onClick="onItemClick">
+
+        <ImageView
+            android:id="@+id/ivPicker"
+            style="@style/info_item_left"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/ivGo"
+            style="@style/info_item_right" />
+
+        <!-- Informations -->
+
+        <LinearLayout
+            style="@style/info_sub_layout"
+            android:layout_toLeftOf="@+id/ivGo"
+            android:layout_toRightOf="@+id/ivPicker">
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/info_small"
+                android:text="@string/pickup_location" />
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvPickUpAddress"
+                style="@style/info_large"
+                android:layout_marginTop="3dp"
+                android:text="@string/set_pickup_location" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Set PickUp -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvSetPickup"
+        style="@style/common_action_button"
+        android:layout_alignParentBottom="true"
+        android:onClick="onItemClick"
+        android:text="@string/set_pickup" />
+
+</RelativeLayout>

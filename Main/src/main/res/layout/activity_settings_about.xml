@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_fragment_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+
+    <RelativeLayout style="@style/header_layout">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick" />
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvTitle"
+            style="@style/setting_header_text"
+            android:layout_centerInParent="true"
+            android:text="@string/setting_about" />
+    </RelativeLayout>
+
+    <!-- Items -->
+
+    <LinearLayout
+        style="@style/setting_part_layout"
+        android:layout_marginTop="30dp">
+
+        <!-- FAQ -->
+
+        <LinearLayout
+            android:id="@+id/layoutFAQ"
+            style="@style/setting_common_item"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_faq" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/setting_part_item_label"
+                        android:layout_centerVertical="true"
+                        android:text="@string/setting_about_faq" />
+
+                    <ImageView
+                        style="@style/setting_part_item_right_image"
+                        android:src="@drawable/ic_right" />
+
+                </RelativeLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/setting_part_item_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Terms Of Use -->
+
+        <LinearLayout
+            android:id="@+id/layoutTerms"
+            style="@style/setting_common_item"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_terms" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/setting_part_item_label"
+                        android:layout_centerVertical="true"
+                        android:text="@string/setting_about_terms" />
+
+                    <ImageView
+                        style="@style/setting_part_item_right_image"
+                        android:src="@drawable/ic_right" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

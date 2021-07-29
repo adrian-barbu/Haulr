@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/header_layout">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:onClick="onBack">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/image_icon_size"
+            android:layout_height="@dimen/image_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_left" />
+
+        <com.haulr.control.font.HaulrTextView
+            style="@style/login_header_text"
+            android:text="@string/back" />
+    </LinearLayout>
+
+    <!-- Title -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvTitle"
+        style="@style/login_header_title"
+        android:layout_centerInParent="true"
+        android:text="Phone Number" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:onClick="onNext">
+
+        <com.haulr.control.font.HaulrTextView
+            style="@style/login_header_text"
+            android:text="@string/next" />
+
+        <ImageView
+            android:layout_width="@dimen/image_icon_size"
+            android:layout_height="@dimen/image_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_right" />
+
+    </LinearLayout>
+
+</RelativeLayout>

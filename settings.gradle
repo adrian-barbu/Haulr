@@ -1,0 +1,3 @@
+include ':image-loader-lib', ':facebook-sdk', ':android-support-v7-appcompat', ':', ':BraintreeApi', ':BraintreeData'
+
+include ':Main'

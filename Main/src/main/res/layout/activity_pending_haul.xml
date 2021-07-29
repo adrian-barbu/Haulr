@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_fragment_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:onClick="onItemClick" />
+
+        <!-- Title -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvTitle"
+            style="@style/setting_header_text"
+            android:layout_centerInParent="true"
+            android:text="@string/pending_haul_customer_title" />
+
+        <!-- Phone Call -->
+
+        <ImageView
+            android:id="@+id/ivPhoneCall"
+            style="@style/image_back_button"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_phone_call"/>
+    </RelativeLayout>
+
+    <!-- Loading Layout -->
+
+    <LinearLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/loading_information"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- Content Layout -->
+
+    <RelativeLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layoutOperation"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Pending Request Information -->
+
+                <LinearLayout
+                    android:id="@+id/layoutPendingContent"
+                    style="@style/pending_haul_info_layout"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center">
+
+                    <!-- Pickup Location -->
+
+                    <LinearLayout style="@style/pending_haul_item">
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvPickupLocation"
+                            style="@style/setting_part_item_label"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pending_haul_pickup_location" />
+                    </LinearLayout>
+
+                    <!-- Separator -->
+                    <LinearLayout style="@style/setting_part_item_separator" />
+
+                    <!-- Dropoff Location -->
+
+                    <LinearLayout style="@style/pending_haul_item">
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvDropOffLocation"
+                            style="@style/setting_part_item_label"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pending_haul_dropoff_location" />
+                    </LinearLayout>
+
+                    <!-- Separator -->
+                    <LinearLayout style="@style/setting_part_item_separator" />
+
+                    <!-- Payment Method -->
+
+                    <LinearLayout style="@style/pending_haul_item">
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvPaymentMethod"
+                            style="@style/setting_part_item_label"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pending_haul_payment_method" />
+                    </LinearLayout>
+
+                    <!-- Separator -->
+                    <LinearLayout
+                        android:id="@+id/layoutSeparatorForPayment"
+                        style="@style/setting_part_item_separator" />
+
+                    <!-- Price of Haul -->
+
+                    <LinearLayout style="@style/pending_haul_item">
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvPrice"
+                            style="@style/setting_part_item_label"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pending_haul_price_of_haul" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Status -->
+
+                <LinearLayout
+                    android:id="@+id/layoutStatus"
+                    style="@style/pending_haul_info_layout"
+                    android:layout_below="@+id/layoutPendingContent"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <LinearLayout style="@style/pending_haul_item">
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvStatus"
+                            style="@style/setting_part_item_label"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pending_haul_status" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <!-- Operation Buttons -->
+
+        <LinearLayout
+            android:id="@+id/layoutOperation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <!-- Continue Service -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvContinue"
+                style="@style/common_action_button"
+                android:layout_marginBottom="2dp"
+                android:onClick="onItemClick"
+                android:text="@string/pending_haul_continue" />
+
+            <!-- Cancel Haul -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvCancel"
+                style="@style/common_action_button"
+                android:onClick="onItemClick"
+                android:text="@string/pending_haul_cancel" />
+
+            <!-- Complete Haul -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvComplete"
+                style="@style/common_action_button"
+                android:onClick="onItemClick"
+                android:text="@string/pending_haul_complete"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_transparent_bg">
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Cancel Haul -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvCancelHaul"
+            style="@style/label_button"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:text="@string/d_cancel_haul"
+            android:visibility="gone"/>
+
+        <!-- Phone Call -->
+
+        <ImageView
+            android:id="@+id/ivPhoneCall"
+            style="@style/image_back_button"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:src="@drawable/ic_phone_call"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutHeaderSeparator"
+        style="@style/haul_info_separator"
+        android:layout_below="@+id/layoutHeader" />
+
+    <!-- Map Based Layout -->
+
+    <RelativeLayout
+        android:id="@+id/layoutMapBased"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvArrivedAtDropoff"
+        android:layout_below="@+id/layoutHeaderSeparator">
+
+        <!-- Map Viewer -->
+
+        <fragment
+            android:id="@+id/mapViewer"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layoutNavigateToDropOff" />
+
+        <!-- Navigate to dropoff -->
+
+        <LinearLayout
+            android:id="@+id/layoutNavigateToDropOff"
+            style="@style/haul_info_item_layout"
+            android:layout_alignParentBottom="true"
+            android:onClick="onItemClick">
+
+            <LinearLayout
+                style="@style/two_column_left_panels"
+                android:gravity="center">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_map_marker" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <LinearLayout style="@style/haul_info_sub_layout">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/view_haul_info_small"
+                        android:text="@string/d_navigation_to_dropoff" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvDropOffAddress"
+                        style="@style/info_large"
+                        android:layout_marginTop="3dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Arrived Button -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvArrivedAtDropoff"
+        style="@style/common_action_button"
+        android:layout_alignParentBottom="true"
+        android:onClick="onItemClick"
+        android:text="@string/d_arrived_at_dropoff" />
+</RelativeLayout>

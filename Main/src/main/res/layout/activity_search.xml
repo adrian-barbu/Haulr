@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/place_search_bg"
+    android:orientation="vertical">
+
+    <!-- Search Bar -->
+
+    <RelativeLayout
+        style="@style/header_layout"
+        android:background="@android:color/transparent">
+
+        <!-- Cancel Button -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvCancel"
+            style="@style/label_button"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/cancel_search" />
+
+        <!-- Search Bar -->
+
+        <EditText
+            android:id="@+id/autocomplete_places"
+            style="@style/place_search_bar"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/tvCancel"
+            android:hint="@string/search_hint" />
+    </RelativeLayout>
+
+    <!-- Separator -->
+
+    <LinearLayout
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/place_item_separator"
+        android:orientation="horizontal" />
+
+    <!-- Current Location -->
+
+    <LinearLayout
+        android:id="@+id/layoutCurrentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:onClick="onCurrentLocation">
+
+        <!-- Picker Icon -->
+
+        <LinearLayout
+            style="@style/two_column_left_panels"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_current_location" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/two_column_right_panels"
+            android:gravity="center">
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/current_location"
+                android:text="@string/current_location" />
+
+            <!-- separator -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/place_item_separator" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Result View -->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/separator"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

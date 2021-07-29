@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_fragment_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <RelativeLayout style="@style/header_layout">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick" />
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvTitle"
+            style="@style/setting_header_text"
+            android:layout_centerInParent="true"
+            android:text="@string/d_change_status_title" />
+    </RelativeLayout>
+
+    <!-- Items -->
+
+    <LinearLayout
+        style="@style/d_change_status_layout"
+        android:layout_marginTop="30dp">
+
+        <!-- Online -->
+
+        <LinearLayout
+            android:id="@+id/layoutOnline"
+            style="@style/d_change_status_item"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_online" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvOnlineBigLabel"
+                        style="@style/d_change_status_item_big_label"
+                        android:layout_centerVertical="true"
+                        android:text="@string/d_online" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/d_change_status_item_small_label"
+                        android:layout_toRightOf="@+id/tvOnlineBigLabel"
+                        android:layout_centerVertical="true"
+                        android:text="@string/d_online_label" />
+
+                </RelativeLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/setting_part_item_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Offline -->
+
+        <LinearLayout
+            android:id="@+id/layoutOffline"
+            style="@style/d_change_status_item"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_offline" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvOfflineBigLabel"
+                        style="@style/d_change_status_item_big_label"
+                        android:layout_centerVertical="true"
+                        android:text="@string/d_offline" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/d_change_status_item_small_label"
+                        android:layout_toRightOf="@+id/tvOfflineBigLabel"
+                        android:layout_centerVertical="true"
+                        android:text="@string/d_offline_label" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

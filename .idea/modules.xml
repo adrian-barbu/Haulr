@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BraintreeApi/BraintreeApi.iml" filepath="$PROJECT_DIR$/BraintreeApi/BraintreeApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BraintreeData/BraintreeData.iml" filepath="$PROJECT_DIR$/BraintreeData/BraintreeData.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Haulr.iml" filepath="$PROJECT_DIR$/Haulr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Main/Main.iml" filepath="$PROJECT_DIR$/Main/Main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-support-v7-appcompat/android-support-v7-appcompat.iml" filepath="$PROJECT_DIR$/android-support-v7-appcompat/android-support-v7-appcompat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebook-sdk/facebook-sdk.iml" filepath="$PROJECT_DIR$/facebook-sdk/facebook-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/image-loader-lib/image-loader-lib.iml" filepath="$PROJECT_DIR$/image-loader-lib/image-loader-lib.iml" />
+    </modules>
+  </component>
+</project>

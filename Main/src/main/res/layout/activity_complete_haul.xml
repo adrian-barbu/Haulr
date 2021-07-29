@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg">
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout"
+        android:padding="10dp"
+        android:background="@android:color/transparent">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick" />
+
+    </RelativeLayout>
+
+    <!-- Loading Layout -->
+
+    <LinearLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/loading_information"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- Content Layout -->
+
+    <RelativeLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutHeader"
+        android:visibility="gone">
+
+        <!-- Main Info -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvCompleteHaul"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Title -->
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/complete_haul_title"
+                android:text="@string/haulr_summary" />
+
+            <!-- price -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvPrice"
+                style="@style/complete_haul_price"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:text="$41.30" />
+
+            <!-- Distance and Time -->
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/complete_haul_common"
+                android:text="@string/distance_time" />
+
+            <!-- Datas -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvDistanceTime"
+                style="@style/complete_haul_common"
+                android:text="10km - 12mins" />
+
+            <!-- Rate Experience -->
+
+            <com.haulr.control.font.HaulrTextView
+                android:id="@+id/tvRateExperience"
+                style="@style/complete_haul_title"
+                android:layout_marginTop="60dp"
+                android:text="@string/rate_experience" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRateLabel"
+                android:layout_marginTop="10dp"
+                android:numStars="5"
+                android:progressDrawable="@drawable/rating_bar"
+                android:rating="5.0" />
+        </LinearLayout>
+
+        <!-- Complete Haul -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvCompleteHaul"
+            style="@style/common_action_button"
+            android:layout_alignParentBottom="true"
+            android:onClick="onItemClick"
+            android:text="@string/complete_haul" />
+    </RelativeLayout>
+</RelativeLayout>

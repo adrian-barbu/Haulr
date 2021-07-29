@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_fragment_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <RelativeLayout style="@style/header_layout">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:onClick="onItemClick" />
+
+        <!-- Title -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvTitle"
+            style="@style/setting_header_text"
+            android:layout_centerInParent="true"
+            android:text="@string/setting_profile" />
+
+        <!-- Update -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvUpdate"
+            style="@style/label_button"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:text="@string/setting_profile_update" />
+    </RelativeLayout>
+
+    <!-- Profile Items -->
+
+    <LinearLayout
+        style="@style/setting_part_layout"
+        android:layout_marginTop="30dp">
+
+        <!-- User Name -->
+
+        <LinearLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_profile" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- First Name -->
+
+                    <EditText
+                        android:id="@+id/etFirstName"
+                        style="@style/setting_profile_editbox"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:hint="@string/setting_profile_first_name" />
+
+                    <!-- Last Name -->
+
+                    <EditText
+                        android:id="@+id/etLastName"
+                        style="@style/setting_profile_editbox"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:hint="@string/setting_profile_last_name" />
+
+                </LinearLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/setting_part_item_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Email -->
+
+        <LinearLayout
+            android:id="@+id/layoutEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_email" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    style="@style/setting_profile_editbox"
+                    android:singleLine="true"
+                    android:hint="@string/setting_profile_email" />
+
+                <!-- Separator -->
+                <LinearLayout style="@style/setting_part_item_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Phone Number -->
+
+        <LinearLayout
+            android:id="@+id/layoutPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/setting_item_icon"
+                    android:src="@drawable/ic_phone_number" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <EditText
+                    android:id="@+id/etPhoneNumber"
+                    style="@style/setting_profile_editbox"
+                    android:singleLine="true"
+                    android:hint="@string/setting_profile_phone_number" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Log Out -->
+
+    <LinearLayout
+        android:id="@+id/layoutLogout"
+        style="@style/setting_part_layout"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:onClick="onItemClick">
+
+        <LinearLayout style="@style/setting_common_item">
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/setting_logout"
+                android:gravity="center"
+                android:text="@string/logout" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

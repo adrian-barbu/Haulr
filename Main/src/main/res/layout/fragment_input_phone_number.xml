@@ -1,0 +1,23 @@
+<!-- Input Phone Number Fragment -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Phone Number Input Box -->
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        style="@style/login_input_box"
+        android:hint="@string/hint_phone_number"
+        android:inputType="phone" />
+
+    <!-- Text -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvHint"
+        style="@style/login_info_label"
+        android:text="@string/label_info_phone_number_for_customer" />
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+
+    <RelativeLayout style="@style/header_layout">
+
+        <!-- Back -->
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/image_back_button"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick" />
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvTitle"
+            style="@style/setting_header_text"
+            android:layout_centerInParent="true"
+            android:text="@string/setting_mover" />
+    </RelativeLayout>
+
+    <!-- Separator -->
+
+    <LinearLayout style="@style/setting_part_item_separator" />
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/driver_logo" />
+
+    <!-- Separator -->
+
+    <LinearLayout style="@style/haul_info_separator" />
+
+    <!-- Items -->
+
+    <LinearLayout
+        style="@style/setting_part_layout"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:id="@+id/layoutDriver"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_mover_mode_white" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <LinearLayout
+                    style="@style/haul_info_sub_layout"
+                    android:layout_toLeftOf="@+id/ivRight1">
+
+                    <com.haulr.control.font.HaulrTextView
+                        style="@style/setting_mover_large"
+                        android:text="@string/setting_driver" />
+
+                    <com.haulr.control.font.HaulrTextView
+                        android:id="@+id/tvDriverLabel"
+                        style="@style/info_small"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/setting_driver_label" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Separator -->
+        <LinearLayout style="@style/haul_info_separator" />
+
+    </LinearLayout>
+</LinearLayout>

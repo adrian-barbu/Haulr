@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_transparent_bg">
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/header_layout">
+
+        <!-- Cancel -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvCancel"
+            style="@style/label_button"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:onClick="onItemClick"
+            android:text="@string/haul_info_cancel" />
+
+        <!-- Price -->
+
+        <com.haulr.control.font.HaulrTextView
+            android:id="@+id/tvPrice"
+            style="@style/haul_info_header_price"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/haul_info_no_price" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutHeaderSeparator"
+        style="@style/haul_info_separator"
+        android:layout_below="@+id/layoutHeader" />
+
+    <!-- Haul Info -->
+
+    <LinearLayout
+        android:id="@+id/layoutPickInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutHeaderSeparator"
+        android:orientation="vertical">
+
+        <!-- Pickup Location -->
+
+        <LinearLayout
+            android:id="@+id/layoutPickupLocation"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_map_marker" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        style="@style/haul_info_sub_layout"
+                        android:layout_toLeftOf="@+id/ivRight1">
+
+                        <com.haulr.control.font.HaulrTextView
+                            style="@style/info_small"
+                            android:text="@string/pickup_location" />
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvPickUpLocation"
+                            style="@style/info_large"
+                            android:layout_marginTop="3dp"
+                            android:text="@string/set_pickup_location" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivRight1"
+                        style="@style/setting_part_item_right_image"
+                        android:src="@drawable/ic_right" />
+
+                </RelativeLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/haul_info_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Dropoff Location -->
+
+        <LinearLayout
+            android:id="@+id/layoutDropoffLocation"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_map_marker" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        style="@style/haul_info_sub_layout"
+                        android:layout_toLeftOf="@+id/ivRight2">
+
+                        <com.haulr.control.font.HaulrTextView
+                            style="@style/info_small"
+                            android:text="@string/dropoff_location" />
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvDropOffLocation"
+                            style="@style/info_large"
+                            android:layout_marginTop="3dp"
+                            android:text="@string/set_dropoff_location" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivRight2"
+                        style="@style/setting_part_item_right_image"
+                        android:src="@drawable/ic_right" />
+
+                </RelativeLayout>
+
+                <!-- Separator -->
+                <LinearLayout style="@style/haul_info_separator" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Payment Method -->
+
+        <LinearLayout
+            android:id="@+id/layoutPaymentMethod"
+            style="@style/haul_info_item_layout"
+            android:onClick="onItemClick">
+
+            <LinearLayout style="@style/two_column_left_panels">
+
+                <ImageView
+                    style="@style/haul_info_item_icon"
+                    android:src="@drawable/ic_credit_card_white" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/two_column_right_panels">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout style="@style/haul_info_sub_layout">
+
+                        <com.haulr.control.font.HaulrTextView
+                            style="@style/info_small"
+                            android:text="@string/payment_method" />
+
+                        <com.haulr.control.font.HaulrTextView
+                            android:id="@+id/tvPaymentMethod"
+                            style="@style/info_large"
+                            android:layout_marginTop="3dp"
+                            android:text="@string/credit_card_payment_method" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Separator -->
+
+    <LinearLayout
+        android:id="@+id/layoutSeparator2"
+        style="@style/haul_info_separator"
+        android:layout_below="@+id/layoutPickInfo" />
+
+    <!-- Add Image Part -->
+
+    <RelativeLayout
+        android:id="@+id/layoutPickPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvRequestHaul"
+        android:layout_below="@+id/layoutSeparator2"
+        android:onClick="onItemClick">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/haul_info_item_icon"
+                android:src="@drawable/ic_camera" />
+
+            <com.haulr.control.font.HaulrTextView
+                style="@style/label_button"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:text="@string/haul_info_add_photo" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
+
+
+    <!-- Request Haul -->
+
+    <com.haulr.control.font.HaulrTextView
+        android:id="@+id/tvRequestHaul"
+        style="@style/common_action_button"
+        android:layout_alignParentBottom="true"
+        android:onClick="onItemClick"
+        android:text="@string/request_haul" />
+</RelativeLayout>

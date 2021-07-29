@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutCard"
+    style="@style/setting_part_layout"
+    android:clickable="true"
+    android:orientation="horizontal">
+
+    <com.haulr.control.creditcard.CreditCardEditText
+        android:id="@+id/etCreditCardNumber"
+        style="@style/credit_card_item"
+        android:hint="@string/payment_card_hint"
+        android:inputType="textNoSuggestions"
+        android:maxLength="19"
+        android:focusableInTouchMode="false"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ivDelete"
+        android:textCursorDrawable="@null" />
+
+    <!-- Delete Button -->
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/setting_item_selector"
+        android:src="@drawable/ic_delete" />
+</RelativeLayout>

@@ -1,0 +1,105 @@
+apply plugin: 'com.android.library'
+
+def paypalVersion = 'PayPalAndroidSDK-2.9.11.jar'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner 'com.braintreepayments.testutils.ui.NoAnimationsInstrumentationTestRunner'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+configurations {
+    lintChecks
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:[2.2.4,3.0)'
+    compile 'com.google.android.gms:play-services-wallet:7.5.0'
+
+    compile project(':BraintreeData')
+    compile files('libs/' + paypalVersion)
+}
+
+
+task runAllTests {
+    /*
+     * Empty task to run via command line Rakefile or ci.sh to indicate that tests that depend on
+     * setting up external services (like the test invalid https server) are set up correctly.
+     * Otherwise, these tests will be skipped
+     */
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    def RUN_ALL_TESTS = taskGraph.hasTask(':BraintreeApi:runAllTests')
+    android.buildTypes.debug.buildConfigField('boolean', 'RUN_ALL_TESTS', '' + RUN_ALL_TESTS)
+}
+
+task grantAnimationPermission(type: Exec, dependsOn: 'installDebugAndroidTest') {
+    commandLine 'adb shell pm grant com.braintreepayments.api.test android.permission.SET_ANIMATION_SCALE'.split(' ')
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.startsWith('connectedAndroidTest')) {
+        task.dependsOn grantAnimationPermission
+    }
+}
+
+/* maven deploy + signing */
+task javadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocsJar(type: Jar, dependsOn: javadocs) {
+    classifier = 'javadoc'
+    from javadocs.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task releaseJar(type: Jar, dependsOn: android.libraryVariants.release.javaCompile) {
+    from projectDir.path + '/build/intermediates/classes/release/'
+    from {
+        configurations.compile.findAll {
+            it.getName() == paypalVersion
+        }.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    exclude { details -> details.file.name.endsWith('.xml') }
+}
+
+task fullJar(type: Jar, dependsOn: releaseJar) {
+    classifier = 'full'
+    from zipTree(releaseJar.archivePath)
+    from {
+        configurations.compile.findAll {
+            it.getName() != paypalVersion && !it.getName().startsWith("play-services") && !it.getName().startsWith("support")
+        }.collect {
+            it.isDirectory() ? null : zipTree(it)
+        }
+    }
+}
+
+artifacts {
+    archives javadocsJar
+    archives sourcesJar
+    archives releaseJar
+    archives fullJar
+}
+
